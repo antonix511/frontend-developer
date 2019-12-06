@@ -362,6 +362,8 @@ class BuscarNuevo extends React.Component {
         var fechaInicio = this.fechaInicio.value;
         var fechaFin = this.fechaFin.value;
         var lista = [];
+        console.log(fechaInicio);
+        console.log(fechaFin);
 
         if (!fechaInicio && !fechaFin) {
             swal("Ingrese lafecha a buscar", " ", "info");
@@ -384,7 +386,7 @@ class BuscarNuevo extends React.Component {
                 apeMat: '',
                 nombre: '',
             })
-
+            console.log(CONFIG + '/recaudaciones/listarPendientes/' + fechaInicio + '/' + fechaFin);
             fetch(CONFIG + '/recaudaciones/listarPendientes/' + fechaInicio + '/' + fechaFin)/*PONER PARAMETROS LAS FECHAS Y LISTO*/
                 .then((response) => {
                     return response.json();
